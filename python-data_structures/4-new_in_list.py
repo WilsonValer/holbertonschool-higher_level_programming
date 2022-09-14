@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def new_in_list(my_list, idx, element):
-    for i in my_list:
+    for i in range(len(my_list)):
         if i == idx:
             other_list = my_list[:]
             other_list[idx] = element
