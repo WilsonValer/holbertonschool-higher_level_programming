@@ -4,5 +4,5 @@ def search_replace(my_list, search, replace):
     length = len(my_list)
     for elem in range(length):
         if my_list[elem] == search:
-            new_list[elem] = 89
+            new_list[elem] = replace
     return new_list
