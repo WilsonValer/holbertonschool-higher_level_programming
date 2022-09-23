@@ -23,3 +23,17 @@ last name is an empty string:
 both are empty strings:
     >>> say_my_name("", "")
     My name is
+
+first name is not a string:
+    >>> say_my_name(12, "Parton")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+second name is a type int:
+	>>> say_my_name("Sergio", 45)
+	Traceback (most recent call last):
+		.....
+	TypeError: last_name must be a string
+
+	
