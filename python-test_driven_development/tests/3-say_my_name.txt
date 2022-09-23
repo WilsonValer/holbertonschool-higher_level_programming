@@ -15,7 +15,6 @@ first name is an empty string:
     >>> say_my_name("", "Parton")
     My name is  Parton
 
-
 last name is an empty string:
     >>> say_my_name("Dolly", "")
     My name is Dolly
@@ -36,4 +35,14 @@ second name is a type int:
 		.....
 	TypeError: last_name must be a string
 
-	
+neither are strings:
+    >>> say_my_name(12, 12)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+no arguments:
+    >>> say_my_name()
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
