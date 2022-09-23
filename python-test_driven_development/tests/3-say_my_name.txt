@@ -15,13 +15,7 @@ first name is an empty string:
     >>> say_my_name("", "Parton")
     My name is  Parton
 
-last name is an empty string:
-    >>> say_my_name("Dolly", "")
-    My name is Dolly
 
-both are empty strings:
-    >>> say_my_name("", "")
-    My name is
 
 first name is not a string:
     >>> say_my_name(12, "Parton")
