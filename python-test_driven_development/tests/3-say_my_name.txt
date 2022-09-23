@@ -1,16 +1,25 @@
-=============================
 The ``3-say_my_name`` module
-=============================
+===================
 
 Using ``say_my_name``
-----------------------
+------------------
 
-Import the function:
+import module:
+    >>> say_my_name = __import__("3-say_my_name").say_my_name
 
-    >>> say_my_name  = __import__('3-say_my_name').say_my_name
+normal case:
+    >>> say_my_name("Dolly", "Parton")
+    My name is Dolly Parton
 
-Now test it:
+first name is an empty string:
+    >>> say_my_name("", "Parton")
+    My name is  Parton
 
-test with normal name
-    >>> say_my_name("John", "Smith")
-    My name is John Smith
+
+last name is an empty string:
+    >>> say_my_name("Dolly", "")
+    My name is Dolly
+
+both are empty strings:
+    >>> say_my_name("", "")
+    My name is
