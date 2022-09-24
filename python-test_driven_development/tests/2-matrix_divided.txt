@@ -122,5 +122,10 @@ Test to realize:
 		 ...
 	 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
+	 >>> matrix_divided([[0, 0], [0, 0]], 3)
+	 [[0.0, 0.0], [0.0, 0.0]]
+	 
+
+
 
 																		  
