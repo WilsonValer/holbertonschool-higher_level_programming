@@ -46,3 +46,23 @@ test for number None:
 	Traceback (most recent call last):
 		...
 	TypeError: size must be an integer
+
+test for []:
+	>>> print_square([])
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+
+test for {}:
+	>>> print_square({})
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+
+try:
+	>>> print_square(())
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+
+
