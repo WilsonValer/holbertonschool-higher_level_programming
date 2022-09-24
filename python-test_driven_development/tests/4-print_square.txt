@@ -21,3 +21,22 @@ Test to realize:
      ####
      ####
      ####
+
+test for no integer:
+	>>> print_square("jorge")
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+
+test for number negative:
+	>>> print_square(-5)
+	Traceback (most recent call last):
+		...
+	ValueError: size must be >= 0
+
+test for number missing:
+	>> print_square()
+	Traceback (most recent call last):
+		...
+	TypeError: print_square() missing 1 required positional argument: 'size'
+																	 
