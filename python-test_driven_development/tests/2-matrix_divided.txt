@@ -82,4 +82,14 @@ Test to realize:
 		 ...
 	 TypeError: div must be a number
 
+	 >>> matrix_divided()
+	 Traceback (most recent call last):
+		 ...
+	 TypeError: matrix_divided() missing 1 required positional argument: 'matrix'
+	 
 
+	 >>> matrix_divided([], 1)
+	 Traceback (most recent call last):
+		 ...
+	 TypeError: matrix must be a matrix (list of lists) of integers/floats
+																		  
