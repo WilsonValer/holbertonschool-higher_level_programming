@@ -1,102 +1,51 @@
-# doctest_5-text_indentation.py
-===============================
-Tests to 5-text_indentation.py
-===============================
+The ``5-text_indentation`` module
+===================
 
-This library search in a text the delimitors (?, : and .) if find this characters insert two new lines that.
-Finally print the new text
-``text_indentation(text)``.
+Using ``text_indentation``
+------------------
 
-File ``5-text_indentation.py``
+import module:
+         >>> text_indentation = __import__("5-text_indentation").text_indentation
 
-Return: None
-
-Importing the function:
-
-	  >>> text_indentation = __import__('5-text_indentation').text_indentation
-
-Test to realize:
-
-     >>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
-     ... Quonam modo? xUtrum igitur tibi litteram videor an totas paginas commovere? \
-     ... Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: \
-     ... Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. \
-     ... Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum \
-     ... rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo \
-     ... stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum \
-     ... cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio \
-     ... beatiorem! Iam ruinas videres""")
-     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-     <BLANKLINE>
-     Quonam modo?
-     <BLANKLINE>
-     xUtrum igitur tibi litteram videor an totas paginas commovere?
-     <BLANKLINE>
-     Non autem hoc:
-     <BLANKLINE>
-     igitur ne illud quidem.
-     <BLANKLINE>
-     Fortasse id optimum, sed ubi illud:
-     <BLANKLINE>
-     Plus semper voluptatis?
-     <BLANKLINE>
-     Teneo, inquit, finem illi videri nihil dolere.
-     <BLANKLINE>
-     Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.
-     <BLANKLINE>
-     Si id dicis, vicimus.
-     <BLANKLINE>
-     Inde sermone vario sex illa a Dipylo stadia confecimus.
-     <BLANKLINE>
-     Sin aliud quid voles, postea.
-     <BLANKLINE>
-     Quae animi affectio suum cuique tribuens atque hanc, quam dico.
-     <BLANKLINE>
-     Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
-
-     >>> text_indentation("::::")
-     :
-     <BLANKLINE>
-     :
-     <BLANKLINE>
-     :
-     <BLANKLINE>
-     :
-     <BLANKLINE>
-
-     >>> text_indentation("\nabc\n\n")
-     <BLANKLINE>
-     abc
-     <BLANKLINE>
-
-     >>> text_indentation("")
+normal case:
+	 >>> text_indentation("hello? world. python is: cool")
+	 hello?
+	 <BLANKLINE>
+	 world.
+	 <BLANKLINE>
+	 python is:
+	 <BLANKLINE>
+	 cool
 
 
-     >>> text_indentation("     ")
 
+ending in special character:
+         >>> text_indentation("hello world?")
+	 hello world?
+	 <BLANKLINE>
 
-     >>> text_indentation("    a  ")
-     a
+not ending in special character:
+    	 >>> text_indentation("hello world")
+	 hello world
 
-     >>> text_indentation("    a         b    ")
-     a         b
+one word:
+         >>> text_indentation("hello")
+         hello
 
-     >>> text_indentation(131651)
-     Traceback (most recent call last):
-     	       ...
-     TypeError: text must be a string
+no argument:
+	 >>> text_indentation()
+         Traceback (most recent call last):
+                   ...
+         TypeError: text_indentation() missing 1 required positional argument: 'text'
 
-     >>> text_indentation(None)
-     Traceback (most recent call last):
-     	       ...
-     TypeError: text must be a string
+more than one argument:
+         >>> text_indentation("hello", "world")
+         Traceback (most recent call last):
+                   ...
+         TypeError: text_indentation() takes 1 positional argument but 2 were given
 
-     >>> text_indentation("10.50")
-     10.
-     <BLANKLINE>
-     50
-
-     >>> text_indentation()
-     Traceback (most recent call last):
-     	       ...
-     TypeError: text_indentation() missing 1 required positional argument: 'text'
+text is not a string:
+         >>> text_indentation(2)
+	 Traceback (most recent call last):
+                   ...
+         TypeError: text must be a string
