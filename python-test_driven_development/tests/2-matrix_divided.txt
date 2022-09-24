@@ -72,3 +72,14 @@ Test to realize:
      	       ...
      TypeError: matrix must be a matrix (list of lists) of integers/floats
 
+	 >>> matrix_divided([["string"], [3, 3], [3, 3]], "aaaaa")
+	 Traceback (most recent call last):
+		 ...
+	 TypeError: div must be a number
+
+	 >>> matrix_divided([[3], [3, 3], [3, 3]], "//")
+	 Traceback (most recent call last):
+		 ...
+	 TypeError: div must be a number
+
+
