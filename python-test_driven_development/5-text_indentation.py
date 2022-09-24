@@ -13,7 +13,7 @@ def text_indentation(text):
     Returns: Nothing
     """
     if not isinstance(text, str):
-        raise TypeError("text must be a stringi")
+        raise TypeError("text must be a string")
 
     cut = ".?:"
     length = len(text)
