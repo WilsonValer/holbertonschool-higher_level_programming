@@ -26,17 +26,7 @@ Test empty matrix:
      ...
      TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-     >>> matrix = []
-     >>> print(matrix_divided(matrix, 2))
-     Traceback (most recent call last):
-     ...
-     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-     >>> matrix = [[], [], []]
-     >>> print(matrix_divided(matrix, 2))
-     Traceback (most recent call last):
-     ...
-     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 Test different sized lists in matrix:
      >>> matrix = [[1, 2, 3], [4]]
