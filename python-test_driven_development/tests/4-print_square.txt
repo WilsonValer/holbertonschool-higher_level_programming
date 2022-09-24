@@ -39,4 +39,10 @@ test for number missing:
 	Traceback (most recent call last):
 		...
 	TypeError: print_square() missing 1 required positional argument: 'size'
-																	 
+
+
+test for number None:
+	>>> print_square(None)
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
