@@ -19,6 +19,6 @@ def text_indentation(text):
     length = len(text)
     for j in range(length):
         if text[j] == cut[0] or text[j] == cut[1] or text[j] == cut[2]:
-            print("\n\n")
+            print("{}.\n\n".format(text[j]))
         else:
             print(text[j], end='')
