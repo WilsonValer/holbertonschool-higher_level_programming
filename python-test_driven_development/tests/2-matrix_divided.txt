@@ -16,14 +16,10 @@ Importing the function:
 
 Test to realize: 
 
-     >>> matrix_divided([], 1)
-     []
 
      >>> matrix_divided([[10, 1], [2, 20], [3, 60]], 319e520)
      [[0.0, 0.0], [0.0, 0.0], [0.0, 0.0]]
 
-     >>> matrix_divided([[], [], []], 3)
-     [[], [], []]
 
      >>> matrix_divided([[3, 3], [3, 3], [3, 3]], 3)
      [[1.0, 1.0], [1.0, 1.0], [1.0, 1.0]]
@@ -76,7 +72,3 @@ Test to realize:
      	       ...
      TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-     >>> matrix_divided()
-     Traceback (most recent call last):
-     	       ...
-     TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
