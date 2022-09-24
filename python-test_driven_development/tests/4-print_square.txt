@@ -1,0 +1,23 @@
+# doctest_4-print_square.txt
+===============================
+Tests to 4-print_square.txt
+===============================
+
+This library is for sum two numbers (only int and float) and the function is called
+``print_square(size)``.
+
+File ``4-print_square.py``
+
+Return: None
+
+Importing the function:
+
+	  >>> print_square = __import__('4-print_square').print_square
+
+Test to realize:
+
+     >>> print_square(4)
+     ####
+     ####
+     ####
+     ####
