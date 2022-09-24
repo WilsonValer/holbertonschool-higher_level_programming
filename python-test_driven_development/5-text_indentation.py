@@ -17,8 +17,14 @@ def text_indentation(text):
 
     cut = ".?:"
     length = len(text)
+    flag = False
     for j in range(length):
+        if flag:
+            if text[j] == " ":
+                continue
+            flag = False
         if text[j] == cut[0] or text[j] == cut[1] or text[j] == cut[2]:
             print("{}\n".format(text[j]))
+            flag = True
         else:
             print(text[j], end='')
