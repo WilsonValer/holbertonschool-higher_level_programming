@@ -6,40 +6,38 @@ max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
+
     """Set of test to validate the functionality of the function max integer"""
 
 
     def test_max(self):
         """Test normal cases without error"""
         result = max_integer([2, 7, 6])
-        self.assertEqual(result, 7)
+        self.assertEqual(result, 7, "wilson ")
 
-    def negative(self):
-        result = max_integer([-5, -7, -1])
-        self.assertEqual(result, -1)
-
-    def string():
+    def test_negat_string(self):
+        """Test normal cases without error"""
         with self.assertRaises(TypeError):
-            max_integer([-5, "wilson"])
+            result = max_integer([-5, "wilson", -1])
 
-    def nega_positive():
-        result = max_integer([4, 5, -7, 3])
-        self.assertEqual(result, 5)
-    
-    def empty():
+    def test_string(self):
+        """Test normal cases without error"""
         with self.assertRaises(TypeError):
-            max_integer([])
+            max_integer([-5, "tp"])
 
-    def tes_error():
-        result = max_integer([8, 2, "rt"])
-        self.assertEqual(result,10, "no is result" )
-        self.assertIsInstance(result, int, " validate type")
 
     def test_None(self):
-        self.assertIsNone(max_integer([7, 9, 15]), None,)
+        """Test normal cases without error"""
+        self.assertIsNone(max_integer([]), None,)
         self.assertIsNone(max_integer(), None)
         self.assertIsNone(max_integer([None]), None)
 
+    def teste_negatives(self):
+        """Test normal cases without error"""
+        result = max_integer([-7, -6, -1])
+        self.assertEqual(result, -1)
 
-if __name__ == '__main__':
-    unittest.main()
+    def test_nega_posi(self):
+        """Test normal cases without error"""
+        result = max_integer([8, -2, 4, -7])
+        self.assertEqual(result, 8)
