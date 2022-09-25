@@ -18,7 +18,8 @@ class Rectangle():
         self.__width = width
         self.__height = height
 
-
+    def __str__(self):
+        print("{} - {}".format(my_rectangle.width, my_rectangle.height))
 
     @property
     def height(self):
@@ -35,7 +36,7 @@ class Rectangle():
 
 
     @property
-    def width():
+    def width(self):
         return self.__width
 
     @width.setter
