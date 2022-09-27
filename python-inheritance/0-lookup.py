@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-"""
-Empty class that defines a Rectangle
-"""
+"""inheritance"""
+
+
 def lookup(obj):
-    """ 
-    function that returns the list
+    """ function that returns the list
     of available attributes
     and methods of an object:
     """
