@@ -1,0 +1,63 @@
+The ``1-my_list`` module
+========================
+
+This is a text file test the above module.
+
+Using ``MyList``
+----------------
+
+First import ``MyList`` from the ``1-my_list`` module:
+    >>> MyList = __import__('1-my_list').MyList
+
+Add an empty list
+    >>> my_list = MyList()
+    >>> print(my_list)
+    []
+    >>> my_list.print_sorted()
+    []
+
+Add only one on list
+    >>> my_list.append(1)
+    >>> my_list.append(1)
+    >>> my_list.append(1)
+    >>> my_list.append(1)
+    >>> my_list.append(1)
+    >>> my_list.append(1)
+    >>> print(my_list)
+    [1, 1, 1, 1, 1, 1]
+    >>> my_list.print_sorted()
+    [1, 1, 1, 1, 1, 1]
+
+
+Add only one value to list
+    >>> my = MyList()
+    >>> my.append(100)
+    >>> print (my)
+    [100]
+    >>> my.print_sorted()
+    [100]
+
+Add integers in not sort order
+    >>> my_l = MyList()
+    >>> my_l.append(1)
+    >>> my_l.append(4)
+    >>> my_l.append(2)
+    >>> my_l.append(3)
+    >>> my_l.append(5)
+    >>> print(my_l)
+    [1, 4, 2, 3, 5]
+    >>> my_l.print_sorted()
+    [1, 2, 3, 4, 5]
+    >>> print(my_l)
+    [1, 4, 2, 3, 5]
+
+Add a negative values to list
+    >>> myl = MyList()
+    >>> myl.append(6)
+    >>> myl.append(-5)
+    >>> print(myl)
+    [6, -5]
+    >>> myl.print_sorted()
+    [-5, 6]
+    >>> print(myl)
+    [6, -5]
