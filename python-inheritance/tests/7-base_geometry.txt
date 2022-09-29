@@ -35,14 +35,14 @@ try to pass negative value:
 	>>> bg.integer_validator("name", -5)
 	Traceback (most recent call last):
 		...
-	TypeError: name must be greater than 0
+	ValueError: name must be greater than 0
 
 Trying to pass a zero value:
 	>>> bg = BaseGeometry()
 	>>> bg.integer_validator("name", 0)
 	Traceback (most recent call last):
 		...
-	TypeError: name must be greater than 0
+	ValueError: name must be greater than 0
 
 Passing a positive value
     >>> bg = BaseGeometry()
@@ -107,11 +107,11 @@ try to age negative:
 	>>> bg.integer_validator("age", -4)
 	Traceback (most recent call last):
 		...
-	TypeError: age must be greater than 0
+	ValueError: age must be greater than 0
 
 try to age zero:
 	>>> bg = BaseGeometry()
 	>>> bg.integer_validator("age", 0)
 	Traceback (most recent call last):
 		...
-	TypeError: age must be greater than 0
+	ValueError: age must be greater than 0
