@@ -21,28 +21,28 @@ try to pass not integer numero:
 	>>> bg.integer_validator("name", "5")
 	Traceback (most recent call last):
 		...
-	TypeError: <name> must be an integer
+	TypeError: name must be an integer
 
 try to pass a boolean value:
 	>>> bg = BaseGeometry()
 	>>> bg.integer_validator("name", True)
 	Traceback (most recent call last):
 		...
-	TypeError: <name> must be an integer
+	TypeError: name must be an integer
 
 try to pass negative value:
 	>>> bg = BaseGeometry()
 	>>> bg.integer_validator("name", -5)
 	Traceback (most recent call last):
 		...
-	TypeError: <name> must be greater than 0
+	TypeError: name must be greater than 0
 
 Trying to pass a zero value:
 	>>> bg = BaseGeometry()
 	>>> bg.integer_validator("name", 0)
 	Traceback (most recent call last):
 		...
-	TypeError: <name> must be greater than 0
+	TypeError: name must be greater than 0
 
 Passing a positive value
     >>> bg = BaseGeometry()
@@ -87,24 +87,17 @@ Passing two arguments to area method
     TypeError: area() takes 1 positional argument but 3 were given
 
 
-try:
-	>>> bg = BaseGeometry()
-	>>> bg.integer_validator("age", [3])
-	Traceback (most recent call last):
-		...
-	TypeError: <name> must be an integer
-
 
 try:
 	>>> bg = BaseGeometry()
 	>>> bg.integer_validator("name", (4,))
 	Traceback (most recent call last):
 		...
-	TypeError: <name> must be an integer
+	TypeError: name must be an integer
 
 try:
 	>>> bg = BaseGeometry()
 	>>> bg.integer_validator("age", [3])
 	Traceback (most recent call last):
 		...
-	TypeError: <name> must be an integer
+	TypeError: age must be an integer
