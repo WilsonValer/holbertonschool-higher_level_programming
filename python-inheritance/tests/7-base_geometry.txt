@@ -115,3 +115,17 @@ try to age zero:
 	Traceback (most recent call last):
 		...
 	ValueError: age must be greater than 0
+
+try:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("age", None)
+	Traceback (most recent call last):
+		...
+	TypeError: age must be an integer
+
+try:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("age", {3, 4})
+	Traceback (most recent call last):
+		...
+	TypeError: age must be an integer
