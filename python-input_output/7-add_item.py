@@ -1,16 +1,12 @@
 #!/usr/bin/python3
 """
-    script that adds all arguments to a Python list,
-    and then save them to a file:
-    You must use your function save_to_json_file from
-    7-save_to_json_file.py
-    You must use your function load_from_json_file
-    from 8-load_from_json_file.py
-    The list must be saved as a JSON representation
-    in a file named add_item.json
-    If the file doesn’t exist, it should be created
-    You don’t need to manage file permissions / exceptions.
+This program take the file add_item.json, and add the
+parameters to the list inside this file.
+- If the file doesn't exist create it.
+- If no exist parameters do nothing or create the list if the file is empty.
 """
+
+
 import sys
 import json
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
