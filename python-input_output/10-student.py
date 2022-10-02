@@ -12,6 +12,10 @@ class Student():
     def to_json(self, attrs=None):
         """ public method """
         dicty = self.__dict__
+
+        if attrs is  None:
+            return dicty
+
         if attrs:
             empty_dic = {}
             for elem in range(len(attrs)):
