@@ -3,6 +3,7 @@
 
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
 
 class TestBase(unittest.TestCase):
     """Test for base class"""
@@ -38,5 +39,7 @@ class TestBase(unittest.TestCase):
         string_02 = Base("sagitario")
         self.assertEqual(string_01.id, "unicornio")
         self.assertEqual(string_02.id, "sagitario")
+
+
 
 
