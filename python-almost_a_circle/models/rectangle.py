@@ -39,6 +39,18 @@ class Rectangle(Base):
             print(" " * self.__x, end="")
             print("#" * self.__width)
 
+    def update(self, *argv):
+        """asigns argument with *argv"""
+        lenght = len(argv)
+        atrib = ['id', 'width', 'height', 'x', 'y']
+
+        if argv is None:
+            return None
+
+        if argv:
+            for elem in range(len(argv)):
+                setattr(self, atrib[elem], argv[elem])
+
     @property
     def width(self):
         """return the value width"""
