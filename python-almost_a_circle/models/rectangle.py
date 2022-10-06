@@ -36,8 +36,14 @@ class Rectangle(Base):
             print("#" * self.__width)
 
     def to_dictionary(self):
-        """ Update the class Rectangle by adding the public method """
-        return self.__dict__
+        """task13 return dict representation of a rectangle"""
+        ids = self.id
+        width = self.width
+        height = self.height
+        x = self.x
+        y = self.y
+        re = {'id': ids, 'width': width, 'height': height, 'x': x, 'y': y}
+        return re
 
     def update(self, *argv, **kwargs):
         """asigns argument with *argv"""
