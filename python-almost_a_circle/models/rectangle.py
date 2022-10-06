@@ -39,7 +39,7 @@ class Rectangle(Base):
             print(" " * self.__x, end="")
             print("#" * self.__width)
 
-    def update(self, *argv):
+    def update(self, *argv, **kwargs):
         """asigns argument with *argv"""
         lenght = len(argv)
         atrib = ['id', 'width', 'height', 'x', 'y']
@@ -50,6 +50,10 @@ class Rectangle(Base):
         if argv:
             for elem in range(len(argv)):
                 setattr(self, atrib[elem], argv[elem])
+        else:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
 
     @property
     def width(self):
