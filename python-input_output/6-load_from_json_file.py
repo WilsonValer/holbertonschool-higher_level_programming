@@ -4,6 +4,6 @@ import json
 
 
 def load_from_json_file(filename):
-    """method to create object"""
+    """method to create for the  object"""
     with open(filename, 'r', encoding="utf-8") as write:
         return json.load(write)
