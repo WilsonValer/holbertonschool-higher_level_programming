@@ -22,7 +22,7 @@ class Square(Rectangle):
     def update(self, *argv, **kwargs):
         """asigns argument with *argv"""
         lenght = len(argv)
-        atrib = ['id', 'width', 'height', 'x', 'y']
+        atrib = ['id', 'size', 'x', 'y']
 
         if argv is None:
             return None
