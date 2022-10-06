@@ -22,14 +22,10 @@ class Rectangle(Base):
             print("{}".format("#") * self.__width)
 
     def __str__(self):
-        """ change str representantion when print object """
-        id_str = str(self.id)
-        w_str = str(self.__width)
-        h_str = str(self.__height)
-        x_str = str(self.__x)
-        y_str = str(self.__y)
-        div_str = x_str + '/' + y_str + ' - ' + w_str + '/' + h_str
-        return ("[Rectangle] " + '(' + id_str + ') ' + div_str)
+        """Informal representation of a Rectangle Instance"""
+        return ("[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}"
+                .format(self.id, self.__x, self.__y,
+                        self.__width, self.__height))
 
     def display(self):
         """ prints the rectangle using # """
