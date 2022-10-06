@@ -29,7 +29,18 @@ class Rectangle(Base):
         str_width = str(self.__width)
         str_height = str(self.__height)
         result = str_x + '/' + str_y + ' - ' + str_width + '/' + str_height
-        return f'[Rectangle] ({str_id})  {result}'
+        return f'[Rectangle] ({str_id}) {result}'
+
+    def display(self):
+        """ prints the rectangle using # """
+        for i in range(self.__y):
+            print()
+        for i in range(self.__height):
+            print(" " * self.__x, end="")
+            print("#" * self.__width)
+
+    def update(self, *args):
+
 
     @property
     def width(self):
