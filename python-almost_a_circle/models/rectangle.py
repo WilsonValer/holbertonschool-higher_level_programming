@@ -35,6 +35,10 @@ class Rectangle(Base):
             print(" " * self.__x, end="")
             print("#" * self.__width)
 
+    def to_dictionary(self):
+        """ Update the class Rectangle by adding the public method """
+        return self.__dict__
+
     def update(self, *argv, **kwargs):
         """asigns argument with *argv"""
         lenght = len(argv)
