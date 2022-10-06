@@ -19,6 +19,22 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
+    def update(self, *argv, **kwargs):
+        """asigns argument with *argv"""
+        lenght = len(argv)
+        atrib = ['id', 'width', 'height', 'x', 'y']
+
+        if argv is None:
+            return None
+
+        if argv:
+            for elem in range(len(argv)):
+                setattr(self, atrib[elem], argv[elem])
+        else:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
+
     def __str__(self):
         """Write the class Square that inherits from Rectangle"""
         return ("[Square] ({:d}) {:d}/{:d} - {:d}"
