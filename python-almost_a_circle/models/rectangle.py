@@ -7,27 +7,29 @@ class Rectangle(Base):
     """mi class recctangle"""
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
-        if type(width) != int:
-            raise TypeError("width must be an integer")
-        if type(height) != int:
-            raise TypeError("height must be an integer")
-        if width <= 0:
-            raise ValueError("width must be > 0")
-        if height <= 0:
-            raise ValueError("height must be > 0")
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
-        if type(x) != int:
-            raise TypeError("x must be an integer")
-        if x < 0:
-            raise ValueError("x must be >= 0")
-        if type(y) != int:
-            raise TypeError("y must be an integer")
-        if y < 0:
-            raise ValueError("y must be >= 0")
-        self.__x = x
-        self.__y = y
+    def area(self):
+        """method to calculate the area"""
+        return self.__width * self.__height
+
+    def display(self):
+        """module to print charcater #"""
+        for elem in range(self.__height):
+            print("{}".format("#") * self.__width)
+
+    def __str__(self):
+        """representation print object"""
+        str_id = str(self.id)
+        str_x = str(self.__x)
+        str_y = str(self.__y)
+        str_width = str(self.__width)
+        str_height = str(self.__height)
+        result = str_x + '/' + str_y + ' - ' + str_width + '/' + str_height
+        return f'[Rectangle] ({str_id})  {result}'
 
     @property
     def width(self):
