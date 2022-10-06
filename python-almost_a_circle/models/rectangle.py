@@ -22,14 +22,14 @@ class Rectangle(Base):
             print("{}".format("#") * self.__width)
 
     def __str__(self):
-        """representation print object"""
-        str_id = str(self.id)
-        str_x = str(self.__x)
-        str_y = str(self.__y)
-        str_width = str(self.__width)
-        str_height = str(self.__height)
-        result = str_x + '/' + str_y + ' - ' + str_width + '/' + str_height
-        return f'[Rectangle] ({str_id}) {result}'
+        """ change str representantion when print object """
+        id_str = str(self.id)
+        w_str = str(self.__width)
+        h_str = str(self.__height)
+        x_str = str(self.__x)
+        y_str = str(self.__y)
+        div_str = x_str + '/' + y_str + ' - ' + w_str + '/' + h_str
+        return ("[Rectangle] " + '(' + id_str + ') ' + div_str)
 
     def display(self):
         """ prints the rectangle using # """
@@ -38,9 +38,6 @@ class Rectangle(Base):
         for i in range(self.__height):
             print(" " * self.__x, end="")
             print("#" * self.__width)
-
-    def update(self, *args):
-
 
     @property
     def width(self):
