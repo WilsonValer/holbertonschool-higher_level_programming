@@ -16,10 +16,6 @@ class Rectangle(Base):
         """method to calculate the area"""
         return self.__width * self.__height
 
-    def display(self):
-        """module to print charcater #"""
-        for elem in range(self.__height):
-            print("{}".format("#") * self.__width)
 
     def __str__(self):
         """Informal representation of a Rectangle Instance"""
