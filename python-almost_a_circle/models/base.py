@@ -51,9 +51,9 @@ class Base:
     def create(cls, **dictionary):
         """18. Dictionary to Instance"""
         if (cls.__name__ == "Rectangle"):
-            dummy = cls(4, 1, 2)
+            dummy = cls(4, 1)
         elif (cls.__name__ == "Square"):
-            dummy = cls(1, 2, 9)
+            dummy = cls(9)
 
         dummy.update(**dictionary)
         return dummy
