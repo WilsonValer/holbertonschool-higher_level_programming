@@ -73,4 +73,4 @@ class Base:
 
                 return my_list
         else:
-            return []
+            return my_list
