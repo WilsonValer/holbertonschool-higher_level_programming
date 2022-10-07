@@ -38,3 +38,10 @@ class Base:
         list_format_json = cls.to_json_string(my_list_dict)
         with open(filename, 'w', encoding='utf-8') as files:
             files.write(list_format_json)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ returns the list of the JSON string representation"""
+        if not json_string:
+            return "[]"
+        return json.loads(json_string)
