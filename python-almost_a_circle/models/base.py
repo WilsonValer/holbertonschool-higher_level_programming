@@ -64,7 +64,7 @@ class Base:
         filename = "{}.json".format(cls.__name__)
         my_list = []
 
-        if filename:
+        if filename != None:
             with open(filename, 'r', encoding="utf-8") as files:
                 list_json = files.read()
                 list_python = cls.from_json_string(list_json)
@@ -73,4 +73,4 @@ class Base:
 
                 return my_list
         else:
-            return my_list
+            return "[]"
