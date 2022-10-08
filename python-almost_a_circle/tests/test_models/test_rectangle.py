@@ -43,6 +43,12 @@ class Test_Rectangle_Attributes(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
             r2 = Rectangle(16, 18)
             r2.height = -15
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            r3 = Rectangle(0, 9)
+            r3.width = 0
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
+            r4 = Rectangle(7, 0)
+            r4.height = 0
     def test_width_height_mustbeinteger(self):
         """width and height must be integer"""
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
