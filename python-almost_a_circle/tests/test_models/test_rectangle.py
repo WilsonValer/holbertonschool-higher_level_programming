@@ -26,7 +26,10 @@ class Test_CodeFormat(unittest.TestCase):
         """for 5 values"""
         r4 = Rectangle(15, 16, 7, 9, 5)
         r4.id = 5
-
+        self.assertEqual(r4.width, 15)
+        self.assertEqual(r4.height, 16)
+        self.assertEqual(r4.x, 7)
+        self.assertEqual(r4.y, 9)
         self.assertEqual(r4.id, 5)
     
     def test_number_argument(self):
