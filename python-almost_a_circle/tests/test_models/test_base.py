@@ -2,6 +2,7 @@
 """ base test """
 
 import os
+import json
 from models.square import Square
 from io import StringIO
 import unittest
@@ -25,8 +26,11 @@ class TestBase(unittest.TestCase):
         case_02 = Base()
         case_03 = Base()
         self.assertEqual(case.id, 25)
+        case_01.id = 2
         self.assertEqual(case_01.id, 2)
+        case_02.id = 3
         self.assertEqual(case_02.id, 3)
+        case_03.id = 4
         self.assertEqual(case_03.id, 4)
 
     def test_negative(self):
@@ -96,3 +100,20 @@ class TestBase(unittest.TestCase):
             self.assertIsInstance(square, Square)
 
         Base._Base__nb_objects -= 4
+
+    def test_create(self):
+        r1_dictionary = self.r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertEqual(self.r1.__str__(), '[Rectangle] (9) 1/0 - 3/5')
+        self.assertEqual(r2.__str__(), '[Rectangle] (9) 1/0 - 3/5')
+        self.assertFalse(self.r1 is r2)
+        self.assertFalse(self.r1 == r2)
+
+    def test_None(self):
+        """
+        Test to check from none empty
+        """
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", mode="r") as myFile:
+            self.assertEqual([], json.load(myFile))
+
