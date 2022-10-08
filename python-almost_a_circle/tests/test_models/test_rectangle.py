@@ -26,6 +26,7 @@ class Test_CodeFormat(unittest.TestCase):
         """for 5 values"""
         r4 = Rectangle(15, 16, 7, 9, 5)
         r4.id = 5
+
         self.assertEqual(r4.id, 5)
     
     def test_number_argument(self):
@@ -39,20 +40,16 @@ class Test_Rectangle_Attributes(unittest.TestCase):
     """method test for task 03"""
     def test_width_height_greaster(self):
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
-            r1 = Rectangle(5, 9)
-            r1.width = -6
+            r1 = Rectangle(-5, 9)
 
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
-            r2 = Rectangle(16, 18)
-            r2.height = -15
+            r2 = Rectangle(15, -18)
     def test_widght_height(self):
         """width and heigh > 0"""
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             r3 = Rectangle(0, 9)
-            r3.width = 0
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
             r4 = Rectangle(7, 0)
-            r4.height = 0
     def test_width_height_mustbeinteger(self):
         """width and height must be integer"""
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
