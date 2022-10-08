@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """module test for rectangle class"""
 
-import io
-import sys
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
@@ -10,16 +8,19 @@ from models.rectangle import Rectangle
 
 class Test_CodeFormat(unittest.TestCase):
     """ test for rectagle class """
-
+    
     def test_normal(self):
         """test for with diffrente number"""
         r1 = Rectangle(15, 16)
-        r2 = Rectangle(15, 16, 7, 10, 5)
+        r1.id = 1
         self.assertEqual(r1.id, 1)
-        self.assertEqual(r2.id, 5)
+        r2 = Rectangle(15, 16, 7, 10)
+        r2.id = 2
+        self.assertEqual(r2.id, 2)
         r3 = Rectangle(7, 25, 43)
-        self.assertEqual(r3.id, 2)
-
+        r3.id = 3
+        self.assertEqual(r3.id, 3)
+    
     def test_number_argument(self):
         """test for worg argument"""
         with self.assertRaises(TypeError):
@@ -62,21 +63,3 @@ class Test_Rectangle_are(unittest.TestCase):
 
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             r2 = Rectangle("25", 18)
-
-
-    def test_display(self):
-        """ 5 and 7 test for display method """
-        output = io.StringIO()
-        sys.stdout = output
-        r = Rectangle(4, 3)
-        r.display()
-        self.assertEqual(output.getvalue(), "####\n####\n####\n")
-        with self.assertRaises(TypeError):
-            r.display(2)
-        with self.assertRaises(TypeError):
-            r.display(2, 3)
-        r = Rectangle(1, 4)
-        output = io.StringIO()
-        sys.stdout = output
-        r.display()
-        self.assertEqual(output.getvalue(), "#\n#\n#\n#\n")
