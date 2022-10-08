@@ -4,6 +4,8 @@
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+import sys
+import io
 
 
 class Test_CodeFormat(unittest.TestCase):
@@ -20,6 +22,9 @@ class Test_CodeFormat(unittest.TestCase):
         r3 = Rectangle(7, 25, 43)
         r3.id = 3
         self.assertEqual(r3.id, 3)
+        r4 = Rectangle(15, 16, 7, 9, 5)
+        r4.id = 5
+        self.assertEqual(r4.id, 5)
     
     def test_number_argument(self):
         """test for worg argument"""
@@ -45,6 +50,10 @@ class Test_Rectangle_Attributes(unittest.TestCase):
 
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
             r2 = Rectangle(16, "18")
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            r3 = Rectangle(16, 5, "18")
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            r4 = Rectangle(16, 5, 18, "7")
 
 class Test_Rectangle_are(unittest.TestCase):
     """ test for rea Rectangle task04 """
@@ -63,3 +72,11 @@ class Test_Rectangle_are(unittest.TestCase):
 
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             r2 = Rectangle("25", 18)
+class Test_for_Display(unittest.TestCase):
+    """test for display"""
+    def test_display(self):
+        output = io.StringIO()
+        sys.stdout = output
+        r1 = Rectangle(4, 3)
+        r1.display()
+        self.assertEqual(output.getvalue(), "####\n####\n####\n")
