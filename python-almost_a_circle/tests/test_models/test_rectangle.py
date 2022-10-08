@@ -90,3 +90,30 @@ class Test_for_Display(unittest.TestCase):
         r1 = Rectangle(4, 3)
         r1.display()
         self.assertEqual(output.getvalue(), "####\n####\n####\n")
+
+class Test_for_update(unittest.TestCase):
+    """ test update """
+    def test_normal(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.id = 1
+        self.assertEqual(r1.__str__(), "[Rectangle] (1) 10/10 - 10/10")
+    def test_update(self):
+        """for 3 values"""
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(75, 2)
+        r1.id = 75
+        self.assertEqual(r1.__str__(), "[Rectangle] (75) 10/10 - 2/10")
+
+    def test_update_02(self):
+        """test for 3 values"""
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(15, 2, 3, 4)
+        r1.id = 15
+        self.assertEqual(r1.__str__(), "[Rectangle] (15) 4/10 - 2/3")
+
+    def test_update_02(self):
+        """test for 3 values"""
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(25, 2, 3, 4, 5)
+        r1.id = 25
+        self.assertEqual(r1.__str__(), "[Rectangle] (25) 4/5 - 2/3")
