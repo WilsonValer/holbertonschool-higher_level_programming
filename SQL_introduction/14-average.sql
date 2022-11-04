@@ -3,4 +3,5 @@
 -- of the database hbtn_0c_0 in your MySQL server.
 
 
-SELECT avg(score) FROM second_table;
+SELECT avg(score) AS average
+FROM second_table ;
