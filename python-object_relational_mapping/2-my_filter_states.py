@@ -14,14 +14,13 @@ if __name__ == "__main__":
                          database=sys.argv[3])
 
     cursor = db.cursor()
-    state_name_searched = sys.argv[4]
+    st = sys.argv[4]
 
-    will = "SELECT * FROM states WHERE name='{}'ORDER BY id ASC".format
-    (state_name_searched)
+    will = "SELECT * FROM states WHERE name='{}' ORDER BY id ASC".format(st)
     cursor.execute(will)
     rows = cursor.fetchall()
     for row in rows:
-        if row[1] == state_name_searched:
+        if row[1] == st:
             print(row)
     db.commit()
     cursor.close()
