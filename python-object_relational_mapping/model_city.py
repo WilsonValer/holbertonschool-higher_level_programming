@@ -8,6 +8,7 @@ from model_state import Base, State
 
 Base = declarative_base()
 
+
 class City(Base):
     """
     Class city ihenrits from Base
