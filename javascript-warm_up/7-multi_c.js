@@ -4,6 +4,6 @@
 */
 
 const large = process.argv[2];
-for (let i = 0; i <= large; i++) {
+for (let i = 0; i < large; i++) {
   console.log('C is fun');
 }
