@@ -13,4 +13,4 @@ function factorial (n) {
   }
 }
 
-console.log(factorial(n));
+console.log(Number.isNaN(n) ? 1 : factorial(n));
