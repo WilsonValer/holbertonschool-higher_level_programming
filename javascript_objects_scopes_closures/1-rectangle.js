@@ -4,9 +4,9 @@ Write a script that prints 3 lines:”:
 */
 
 class Rectangle {
-  constructor (h, w) {
-    this.height = h;
+  constructor (w, h) {
     this.width = w;
+    this.height = h;
   }
 }
 module.exports = Rectangle;
